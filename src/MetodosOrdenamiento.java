@@ -155,7 +155,8 @@ public class MetodosOrdenamiento {
     }
 
     // Método de inserción con errores
-    // Error encontrado:
+    // Error encontrado: poner la j para el for es incorrecto 
+    // Solución: Cambiar la j por el i
     public int[] insercionSegundo(int[] arregloOriginal) {
 
         int[] arreglo = Arrays.copyOf(arregloOriginal, arregloOriginal.length);
@@ -163,7 +164,7 @@ public class MetodosOrdenamiento {
             int actual = arreglo[j];
 
             int i = j - 1;
-            for (;i >= 0 && arreglo[j] > actual; j--) {
+            for (;i >= 0 && arreglo[j] > actual; i--) {
                 arreglo[j + 1] = arreglo[j];
             }
             arreglo[i + 1] = actual;
@@ -172,7 +173,8 @@ public class MetodosOrdenamiento {
     }
 
     // Método de inserción con errores
-    // Error encontrado:
+    // Error encontrado: El índice i en el ciclo while incrementa innecesariamente, causando error lógico.
+    // Solución: Cambiar el i++ por i-- en el while
     public int[] insercionTercero(int[] arregloOriginal) {
 
         int[] arreglo = Arrays.copyOf(arregloOriginal, arregloOriginal.length);
@@ -182,7 +184,7 @@ public class MetodosOrdenamiento {
 
             while (i > 0 && arreglo[i] < key) {
                 arreglo[i + 1] = arreglo[i];
-                i++;
+                i--;
             }
             arreglo[i + 1] = key;
         }
